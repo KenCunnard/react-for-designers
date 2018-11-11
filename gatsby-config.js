@@ -5,6 +5,13 @@ module.exports = {
     keywords: 'react course, react for designers, ios development, sketch app, swift app course, arkit 2, after effects, create sketch plugin'
   },
   plugins: [
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: '7195u9q1n0hh',
+        accessToken: 'c48e847e52222738924fea583748b3870019cbbf66c72b7cb94c3e0437a71685'
+      }
+    }
   ]
 }
