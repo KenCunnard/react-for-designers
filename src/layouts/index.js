@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 
 import './index.css'
 import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
 
 const Layout = ({ children, data }) => (
   <div>
@@ -16,6 +17,7 @@ const Layout = ({ children, data }) => (
     />
     <Header />
     {children()}
+    <Footer data={data}>All rights reserved. All wrongs reversed.</Footer>
   </div>
 )
 
@@ -32,6 +34,15 @@ export const query = graphql`
         title
         description
         keywords
+      }
+    }
+    allContentfulLink( sort: { fields: [createdAt], order: ASC }) {
+      edges {
+        node {
+          title
+          url
+          createdAt
+        }
       }
     }
   }
